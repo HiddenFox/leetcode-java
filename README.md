@@ -1,9 +1,10 @@
 leetcode-java
 =============
 
-Java code of leetcode.com
+Java answer for leetcode.com
 
 ================Index================
+
 com.leetcode.array
     Spiral Matrix
 
