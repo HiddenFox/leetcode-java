@@ -7,12 +7,15 @@ Java answer for leetcode.com
 
 com.leetcode.array
 
+    Search a 2D Matrix
     Spiral Matrix
 
 
 com.leetcode.list
 
     Linked List Cycle
+    Linked List Cycle II
+    Remove Duplicates from Sorted List
 
 
 com.leetcode.string
