@@ -1,3 +1,9 @@
+# IDEA peoject
+/.idea
+/out
+*.iml
+
+# java class
 *.class
 
 # Package Files #
