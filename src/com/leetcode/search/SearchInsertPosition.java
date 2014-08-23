@@ -17,7 +17,7 @@ package com.leetcode.search;
  * Date: 14-8-21
  */
 public class SearchInsertPosition {
-    public int searchInsert(int[] A, int target) {
+    public int searchInsert1(int[] A, int target) {
         if (A.length == 0) {
             return 0;
         }
@@ -26,13 +26,6 @@ public class SearchInsertPosition {
         int right = A.length-1;
 
         while (left < right) {
-            if (target < A[left]) {
-                return left;
-            }
-            if (target > A[right]) {
-                return right + 1;
-            }
-
             int mid = (right + left) / 2;
             if (A[mid] == target) {
                 return mid;
@@ -49,4 +42,34 @@ public class SearchInsertPosition {
             return left + 1;
         }
     }
+
+    public int searchInsert2(int[] A, int target) {
+        if (A.length == 0) {
+            return 0;
+        }
+
+        int left = 0;
+        int right = A.length;
+
+        while (left < right - 1) {
+            int mid = (right + left) / 2;
+            if (A[mid] == target) {
+                return mid;
+            } else if (A[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+
+        if (left == right) {
+            return left;
+        }
+        if (A[left] >= target) {
+            return left;
+        } else  {
+            return left + 1;
+        }
+    }
+
 }
