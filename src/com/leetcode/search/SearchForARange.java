@@ -46,7 +46,7 @@ public class SearchForARange {
         while (left < right) {
             int mid = (right + left) / 2;
             if (A[mid] == target) {
-                right = mid;
+                right = mid - 1;
             } else {
                 left = mid + 1;
             }
