@@ -68,4 +68,60 @@ public class RemoveDuplicatesFromSortedList2 {
 
         return head;
     }
+
+    public ListNode deleteDuplicates2(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+
+        ListNode previousNode = new ListNode(0);
+        previousNode.next = head;
+
+        boolean deleteNext = false;
+        while (previousNode.next != null && previousNode.next.next != null) {
+            if (previousNode.next.val == previousNode.next.next.val) {
+                previousNode.next.next = previousNode.next.next.next;
+                deleteNext = true;
+            } else {
+                if (deleteNext) {
+                    if (previousNode.next == head) {
+                        head = head.next;
+                    }
+                    previousNode.next = previousNode.next.next;
+                } else {
+                    previousNode = previousNode.next;
+                }
+                deleteNext = false;
+            }
+        }
+        if (deleteNext) {
+            if (previousNode.next == head) {
+                head = head.next;
+            }
+            previousNode.next = previousNode.next.next;
+        }
+        return head;
+    }
+
+    public ListNode deleteDuplicates3(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+
+        ListNode extraNode = new ListNode(0);
+        extraNode.next = head;
+        ListNode currentNode = extraNode;
+
+        while (currentNode.next != null && currentNode.next.next != null) {
+            if (currentNode.next.val == currentNode.next.next.val) {
+                int currentValue = currentNode.next.val;
+                while (currentNode.next != null && currentNode.next.val == currentValue) {
+                    currentNode.next = currentNode.next.next;
+                }
+            } else {
+                currentNode = currentNode.next;
+            }
+        }
+        return extraNode.next;
+    }
 }
