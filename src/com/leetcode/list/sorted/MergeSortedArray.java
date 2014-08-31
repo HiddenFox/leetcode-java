@@ -11,7 +11,7 @@ package com.leetcode.list.sorted;
  * The number of elements initialized in A and B are m and n respectively.
  * ------------------------------------------------------------------------------
  * Author: Frank Han (trendhanfeng@gmail.com)
- * Date: 2014-08-23
+ * Date: 2014-08-31
  */
 public class MergeSortedArray {
     public void merge(int A[], int m, int B[], int n) {
